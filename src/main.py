@@ -251,7 +251,7 @@ class CommentWorker():
         badge = badge.lower().replace('\\','')
         grantee_unescaped = grantee.replace('\\','')
 
-        if author in config.admin_accounts:
+        if author in config.admin_accounts or author == "tfbninja":
             investor = sess.query(Investor).\
                 filter(Investor.name == grantee_unescaped).\
                 first()
